@@ -3,6 +3,7 @@ import { Box, TextField, Typography } from "@mui/material";
 import CustomTextField from './CustomTextField'
 import { Photo } from "@mui/icons-material";
 import PhotoUploadBox from "./PhotoUploadBox";
+import CustomLayout from './CustomLayout'
 
 const AdmissionHeader = () => {
     const [photo, setPhoto] = useState(null);
@@ -20,7 +21,7 @@ const AdmissionHeader = () => {
                 display="flex"
                 flexDirection={{ xs: "column", md: "row" }}
                 justifyContent="space-between"
-                alignItems={{ xs: "stretch", md: "flex-start" }}
+                alignItems={{ xs: "stretch", md: "start" }}
                 sx={{ p: 4, gap: 2 }}
             >
                 {/* Left - School Info */}
@@ -35,11 +36,11 @@ const AdmissionHeader = () => {
 
                 {/* Middle - Official Use Box */}
                 <Box
-                    width={{ xs: '90%', md: '40%' }}
+                    width={{ xs: '90%', md: '35%' }}
                     sx={{
                         border: "1px solid black",
                         borderRadius: 2,
-                        px: 2,
+                        px: 1,
                         py: 1,
                         display: "flex",
                         flexDirection: "column",
@@ -50,28 +51,64 @@ const AdmissionHeader = () => {
                         FOR OFFICIAL USE
                     </Typography>
 
-                    <Box sx={{ mt: 1, display: "flex", alignItems: "center", gap: 1 }}>
-                        <Typography variant="body2" fontWeight="bold">
-                            Scholar No.:
-                        </Typography>
-                        <TextField
-                            size="small"
-                            variant="outlined"
-                            label="Scholar No."
-                            InputProps={{ sx: { height: 40 } }}
-                            sx={{ flex: 1 }}
+                    <Box sx={{ display: "flex", alignItems: "center",  }}>
+                        <CustomLayout
+                            itemsPerRow={2}
+                            direction="row"
+                            fields={[
+                                {
+                                    wantTypoORCustomField: 'TYPO',
+                                    type: 'text',
+                                    label: 'Scholar No:',
+                                    variant: "body2",
+                                    name: 'scholarNo',
+                                    sx: { fontWeight: "bold" },
+                                    flex: { xs: '0 0 20%', md: '0 0 5%' },
+
+                                },
+                                {
+                                    wantTypoORCustomField: 'FIELD',
+                                    type: 'text',
+                                    label: '',
+                                    name: 'scholarNo',
+                                    TextLabel: "Scholar No.",
+                                    variant: "outlined",
+                                    fullWidth: true,
+                                    sx: { flex: 3 }
+
+
+                                }
+                            ]}
                         />
                     </Box>
 
                     <Box sx={{ mt: 1, display: "flex", alignItems: "center", gap: 1 }}>
-                        <Typography variant="body2" fontWeight="bold">
-                            Date Of Admission:
-                        </Typography>
-                        <TextField
-                            type="date"
-                            size="small"
-                            variant="outlined"
-                            sx={{ flex: 1 }}
+                        <CustomLayout
+                            itemsPerRow={2}
+                            direction="row"
+                            fields=
+                            {[
+                                {
+                                    wantTypoORCustomField: 'TYPO',
+                                    type: 'text',
+                                    label: 'Date Of Admission:',
+                                    variant: "body2",
+                                    name: 'dateOfAdmission',
+                                    sx: { fontWeight: "bold" },
+                                    flex: { xs: '0 0 20%', md: '0 0 5%' },
+                                },
+                                {
+                                    wantTypoORCustomField: 'FIELD',
+                                    type: 'date',
+                                    label: '',
+                                    name: 'scholarNo',
+                                    TextLabel: "Scholar No.",
+                                    variant: "outlined",
+                                    // fullWidth: true,
+                                    flex:{ xs: '0 0 80%', md: '0 0 10%' },
+                                }
+
+                            ]}
                         />
                     </Box>
                 </Box>
@@ -95,20 +132,33 @@ const AdmissionHeader = () => {
             </Box>
 
             {/* PEN NO : */}
-            <Box sx={{ mt: 1, display: "flex", alignItems: "center", justifyContent: "center", gap: 1 }}>
-                <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-                    <Typography variant="body2" fontWeight="bold">
-                        PEN NO:
-                    </Typography>
-                    <TextField
-                        type="text"
-                        size="small"
-                        variant="outlined"
-                        label="Pen No:"
-                        InputProps={{ sx: { height: 40, width: 250 } }}
-                        sx={{ flex: 1 }}
-                    />
-                </Box>
+            <Box sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <CustomLayout
+                    itemsPerRow={2}
+                    direction="row"
+                    fields={[
+                        {
+                            wantTypoORCustomField: 'TYPO',
+                            type: 'text',
+                            label: 'PEN NO:',
+                            name: 'penNo',
+                            flex: {
+                                xs: '0 0 100%',
+                                md: '0 0 10%'
+                            }
+                        },
+                        {
+                            wantTypoORCustomField: 'FIELD',
+                            type: 'text',
+                            label: '',
+                            name: 'penNo',
+                            variant: "outlined",
+                            width: '100%',
+                            sx: { flex: 1 }
+                        }
+                    ]}
+                />
+                {/* </Box> */}
             </Box>
 
             {/* To, The Principal */}

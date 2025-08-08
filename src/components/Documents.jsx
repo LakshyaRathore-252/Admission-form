@@ -23,7 +23,7 @@ export default function Documents() {
             </Container>
             <Box>
                 <CustomLayout
-                    itemsPerRow={6}
+                    itemsPerRow={7}
                     direction="row"
                     fields={[
                         {
@@ -33,7 +33,7 @@ export default function Documents() {
                             wantTypoORCustomField: "TYPO",
                             flex: {
                                 xs: "0 0 100%",
-                                md: "0 0 10%"
+                                md: "0 0 5%"
                             }
                         },
                         {
@@ -69,10 +69,12 @@ export default function Documents() {
                             type: "text",
                             label: "AUTHORISED SIGNATURE:",
                             wantTypoORCustomField: "TYPO",
-                            flex:{
+                            flex: {
                                 xs: "0 0 100%",
-                                md: "0 0 5%"
-                            }
+                                md: "0 0 10%"
+                            },
+                            sx: { marginLeft: { xs: 0, md: 'auto' } }
+
                         },
                         {
                             laebl: "",
@@ -83,8 +85,9 @@ export default function Documents() {
                             border: false,
                             flex: {
                                 xs: "0 0 100%",
-                                md: "0 0 10%"
-                            }
+                                md: "0 0 5%"
+                            },
+
                         },
 
 

@@ -57,13 +57,13 @@ const CustomLayout = ({
                                     width={field.width}
                                     height={field.height}
                                     border={field.border}
-                                    
+
                                 />
                             )}
 
 
                             {(currentType === 'BOTH' || currentType === 'TYPO') && (
-                                <Typography variant='body2' sx={{ fontSize: 14, whiteSpace: 'nowrap' }}>
+                                <Typography variant='body2' sx={{ fontSize: 14, whiteSpace: 'nowrap', ...field.sx }}>
                                     {field.label}
                                 </Typography>
                             )}
@@ -78,6 +78,8 @@ const CustomLayout = ({
                                     TextLabel={field.label}
                                     width={field?.width}
                                     options={field.options || []}
+                                    fontSize={field.fontSize}
+                                    fontWeight={field.fontWeight}
                                 />
                             )}
                         </Box>
