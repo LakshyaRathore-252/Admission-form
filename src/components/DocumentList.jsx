@@ -1,7 +1,8 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
 import PhotoUploadBox from "./PhotoUploadBox";
-const DocumentList = ({ title, documents, columns = 1 }) => {
+const DocumentList = ({ title, documents, columns = 1, nameArray }) => {
+   
     return (
         <Box>
             {title && (
@@ -20,11 +21,23 @@ const DocumentList = ({ title, documents, columns = 1 }) => {
                 }}
             >
                 {documents?.map((doc, index) => (
-                    <Typography key={index} sx={{ maxWidth: 300 , display: "flex", alignItems: "center"}} variant="body2">
+                    <Typography
+                        key={index}
+                        sx={{ maxWidth: 400, display: "flex", alignItems: "center" }}
+                        variant="body2"
+                    >
                         {index + 1}) {doc}
-                        <PhotoUploadBox placeholderText={""} onChange={(file) => console.log(file)} border={false} width={80} height={20} />
+                        <PhotoUploadBox
+                            name={nameArray?.[index] || ""}
+                            placeholderText=""
+                            onChange={(file) => console.log(file)}
+                            border={false}
+                            width={200}
+                            height={100}
+                        />
                     </Typography>
                 ))}
+
             </Box>
         </Box>
     );

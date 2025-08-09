@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Box, TextField, Typography } from "@mui/material";
-import CustomTextField from './CustomTextField'
+import CustomInput from './CustomInput'
 import { Photo } from "@mui/icons-material";
 import PhotoUploadBox from "./PhotoUploadBox";
 import CustomLayout from './CustomLayout'
@@ -9,7 +9,7 @@ const AdmissionHeader = () => {
     const [photo, setPhoto] = useState(null);
 
     const handlePhotoChange = (e) => {
-        const file = e.target.files[0];
+        const file = e?.target?.files[0];
         if (file) {
             setPhoto(URL.createObjectURL(file));
         }
@@ -51,14 +51,13 @@ const AdmissionHeader = () => {
                         FOR OFFICIAL USE
                     </Typography>
 
-                    <Box sx={{ display: "flex", alignItems: "center",  }}>
+                    <Box sx={{ display: "flex", alignItems: "center", }}>
                         <CustomLayout
                             itemsPerRow={2}
                             direction="row"
                             fields={[
                                 {
-                                    wantTypoORCustomField: 'TYPO',
-                                    type: 'text',
+                                    WantTypoORCustomField: 'TYPO',
                                     label: 'Scholar No:',
                                     variant: "body2",
                                     name: 'scholarNo',
@@ -67,7 +66,7 @@ const AdmissionHeader = () => {
 
                                 },
                                 {
-                                    wantTypoORCustomField: 'FIELD',
+                                    WantTypoORCustomField: 'FIELD',
                                     type: 'text',
                                     label: '',
                                     name: 'scholarNo',
@@ -89,23 +88,23 @@ const AdmissionHeader = () => {
                             fields=
                             {[
                                 {
-                                    wantTypoORCustomField: 'TYPO',
+                                    WantTypoORCustomField: 'TYPO',
                                     type: 'text',
                                     label: 'Date Of Admission:',
                                     variant: "body2",
-                                    name: 'dateOfAdmission',
+                                    name: 'admissionDate',
                                     sx: { fontWeight: "bold" },
                                     flex: { xs: '0 0 20%', md: '0 0 5%' },
                                 },
                                 {
-                                    wantTypoORCustomField: 'FIELD',
+                                    WantTypoORCustomField: 'FIELD',
                                     type: 'date',
                                     label: '',
-                                    name: 'scholarNo',
+                                    name: 'admissionDate',
                                     TextLabel: "Scholar No.",
                                     variant: "outlined",
                                     // fullWidth: true,
-                                    flex:{ xs: '0 0 80%', md: '0 0 10%' },
+                                    flex: { xs: '0 0 80%', md: '0 0 10%' },
                                 }
 
                             ]}
@@ -127,6 +126,7 @@ const AdmissionHeader = () => {
                         onChange={handlePhotoChange}
                         width={200}
                         height={100}
+                        name={"studentPhoto"}
                     />
                 </Box>
             </Box>
@@ -138,7 +138,7 @@ const AdmissionHeader = () => {
                     direction="row"
                     fields={[
                         {
-                            wantTypoORCustomField: 'TYPO',
+                            WantTypoORCustomField: 'TYPO',
                             type: 'text',
                             label: 'PEN NO:',
                             name: 'penNo',
@@ -148,7 +148,7 @@ const AdmissionHeader = () => {
                             }
                         },
                         {
-                            wantTypoORCustomField: 'FIELD',
+                            WantTypoORCustomField: 'FIELD',
                             type: 'text',
                             label: '',
                             name: 'penNo',
@@ -177,7 +177,7 @@ const AdmissionHeader = () => {
                             We apply for the admission of our ward for standard
                         </Typography>
 
-                        <CustomTextField
+                        <CustomInput
                             label=""
                             height={30}
                             size="small"
@@ -188,7 +188,7 @@ const AdmissionHeader = () => {
                             for the session
                         </Typography>
 
-                        <CustomTextField
+                        <CustomInput
                             label=""
                             height={30}
                             size="small"

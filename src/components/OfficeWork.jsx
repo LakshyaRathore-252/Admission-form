@@ -1,6 +1,6 @@
 import { Box, Divider, Typography } from '@mui/material'
 import React from 'react'
-import CustomInput from './CustomTextField'
+import CustomInput from './CustomInput'
 import CustomLayout from './CustomLayout'
 
 const OfficeWork = () => {
@@ -25,19 +25,19 @@ const OfficeWork = () => {
                 ml={2}
                 gap={1}
             >
-                <CustomInput type="text" wantTypoORCustomField="FIELD" width="150px" />
+                <CustomInput name="stuName" type="text" WantTypoORCustomField="FIELD" width="150px" />
 
                 <Typography variant="body1" component="span">
                     is admitted in
                 </Typography>
 
-                <CustomInput type="text" wantTypoORCustomField="FIELD" width="150px" />
+                <CustomInput name="class" TextLabel='Class' label={"Class"} type="text" WantTypoORCustomField="FIELD" width="150px" />
 
                 <Typography variant="body1" component="span">
                     class on
                 </Typography>
 
-                <CustomInput type="text" wantTypoORCustomField="FIELD" width="150px" />
+                <CustomInput name="admissionDate" type="text" WantTypoORCustomField="FIELD" width="150px" />
 
                 <Typography variant="body1" component="span">
                     & his/her admission is provisional till required documents are not submitted.
@@ -49,7 +49,7 @@ const OfficeWork = () => {
                     ADMISSION FEE / FIRST INSTALLMENT / PAID ON:
                 </Typography>
 
-                <CustomInput type="text" wantTypoORCustomField="FIELD" width="150px" />
+                <CustomInput name={"admissionDate"} type="date" WantTypoORCustomField="FIELD" width="150px" />
             </Box>
 
             <Box>
@@ -60,9 +60,9 @@ const OfficeWork = () => {
                     justifyContent="center"
                     fields={[
                         {
-                            name: "signature",
+                            name: "signOfAccAuthority",
                             label: " SIGNATURE OF ACCOUNTS AUTHORITY",
-                            wantTypoORCustomField: "TYPO",
+                            WantTypoORCustomField: "TYPO",
                             flex: {
                                 xs: "0 0 100%",
                                 sm: "0 0 100%",
@@ -70,10 +70,10 @@ const OfficeWork = () => {
                             }
                         },
                         {
-                            name: "signature",
+                            name: "signOfAccAuthority",
                             label: "",
                             type: "photo",
-                            wantTypoORCustomField: "TYPO",
+                            WantTypoORCustomField: "TYPO",
                             width: 150,
                             height: 30,
                             border: false,
@@ -85,9 +85,9 @@ const OfficeWork = () => {
                             }
                         },
                         {
-                            name: "signature",
+                            name: "signOfScholAuthority",
                             label: " SIGNATURE OF SCHOOL AUTHORITY",
-                            wantTypoORCustomField: "TYPO",
+                            WantTypoORCustomField: "TYPO",
                             flex: {
                                 xs: "0 0 100%",
                                 sm: "0 0 100%",
@@ -95,10 +95,10 @@ const OfficeWork = () => {
                             }
                         },
                         {
-                            name: "signature",
+                            name: "signOfScholAuthority",
                             label: "",
                             type: "photo",
-                            wantTypoORCustomField: "TYPO",
+                            WantTypoORCustomField: "TYPO",
                             width: 150,
                             height: 30,
                             border: false,

@@ -1,6 +1,6 @@
 import { Box, Link, TextField, Typography } from '@mui/material';
 import React from 'react';
-import CustomTextField from './CustomTextField';
+import CustomInput from './CustomInput';
 
 const Header = () => {
     return (
@@ -138,12 +138,14 @@ const Header = () => {
 
                 {/* Right - Form Number Input */}
                 <Box sx={{ width: { xs: "83%", sm: "33%", md: "23%" }, textAlign: "right", mt: { xs: 2 } }}>
-                    <CustomTextField
+                    <CustomInput
                         label=""
                         TextLabel='Form No.'
                         size="small"
                         type='text'
                         variant="outlined"
+                        name="formNo"
+                       
                     />
                 </Box>
             </Box>

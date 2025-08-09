@@ -66,10 +66,10 @@ const ParentDeclaration = () => {
                     direction="row"
                     fields={[
                         {
-                            name: "DOB",
+                            name: "parentDOB",
                             label: "DATE OF BIRTH",
                             type: "text",
-                            wantTypoORCustomField: "TYPO",
+                            WantTypoORCustomField: "TYPO",
                             flex: {
                                 xs: "0 0 100%",
                                 sm: "0 0 100%",
@@ -77,10 +77,10 @@ const ParentDeclaration = () => {
                             }
                         },
                         {
-                            name: "DOB",
+                            name: "parentDOB",
                             label: "",
                             type: "date",
-                            wantTypoORCustomField: "FIELD",
+                            WantTypoORCustomField: "FIELD",
                             flex: {
                                 xs: "0 0 100%",
                                 sm: "0 0 100%",
@@ -88,10 +88,10 @@ const ParentDeclaration = () => {
                             },
                         },
                         {
-                            name: "signature",
+                            name: "parentSign",
                             label: " Signature of Parent/Guardian",
                             type: "text",
-                            wantTypoORCustomField: "TYPO",
+                            WantTypoORCustomField: "TYPO",
                             flex: {
                                 xs: "0 0 100%",
                                 sm: "0 0 100%",
@@ -99,10 +99,10 @@ const ParentDeclaration = () => {
                             }
                         },
                         {
-                            name: "signature",
+                            name: "parentSign",
                             label: "",
                             type: "photo",
-                            wantTypoORCustomField: "TYPO",
+                            WantTypoORCustomField: "TYPO",
                             border: false,
                             width: 150,
                             height: 30,
@@ -123,7 +123,7 @@ const ParentDeclaration = () => {
                     fields={[
                         {
                             label: "",
-                            wantTypoORCustomField: "TYPO",
+                            WantTypoORCustomField: "TYPO",
                             flex: {
                                 xs: "0 0 0%", // mobile
                                 sm: "0 0 0%", // tablet
@@ -132,9 +132,9 @@ const ParentDeclaration = () => {
 
                         },
                         {
-                            name: "Name",
+                            name: "parentName",
                             label: "Name:",
-                            wantTypoORCustomField: "TYPO",
+                            WantTypoORCustomField: "TYPO",
                             flex: {
                                 xs: "0 0 100%", // mobile
                                 sm: "0 0 100%", // tablet
@@ -142,10 +142,10 @@ const ParentDeclaration = () => {
                             }
                         },
                         {
-                            name: "Name",
+                            name: "parentName",
                             label: "Name:",
                             type: "text",
-                            wantTypoORCustomField: "FIELD",
+                            WantTypoORCustomField: "FIELD",
                             flex: {
                                 xs: "0 0 100%", // mobile
                                 sm: "0 0 100%", // tablet
@@ -153,9 +153,9 @@ const ParentDeclaration = () => {
                             }
                         },
                         {
-                            name: "RELATION",
+                            name: "relation",
                             label: "RELATION:",
-                            wantTypoORCustomField: "TYPO",
+                            WantTypoORCustomField: "TYPO",
                             flex: {
                                 xs: "0 0 100%", // mobile
                                 sm: "0 0 100%", // tablet
@@ -163,10 +163,10 @@ const ParentDeclaration = () => {
                             }
                         },
                         {
-                            name: "Relation",
+                            name: "relation",
                             label: "RELATION",
                             type: "text",
-                            wantTypoORCustomField: "FIELD",
+                            WantTypoORCustomField: "FIELD",
                             flex: {
                                 xs: "0 0 100%", // mobile
                                 sm: "0 0 100%", // tablet

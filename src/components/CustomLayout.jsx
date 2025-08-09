@@ -1,14 +1,13 @@
 import React from 'react';
 import { Box, Typography, useMediaQuery, useTheme } from '@mui/material';
-import CustomTextField from './CustomTextField';
+import CustomInput from './CustomInput';
 import PhotoUploadBox from './PhotoUploadBox';
-import SignatureUploader from './SignatureUploader';
 
 const CustomLayout = ({
     fields = [],
     itemsPerRow = 4, // default
     direction = 'column',
-    wantTypoORCustomField = 'BOTH',
+    WantTypoORCustomField = 'BOTH',
     sx = {},
     cssSX = {},
 }) => {
@@ -31,7 +30,7 @@ const CustomLayout = ({
         <Box sx={{ p: 2, ...sx }}>
             <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2 }}>
                 {fields.map((field, index) => {
-                    const currentType = field.wantTypoORCustomField ?? wantTypoORCustomField;
+                    const currentType = field.WantTypoORCustomField ?? WantTypoORCustomField;
 
                     return (
                         <Box
@@ -52,15 +51,14 @@ const CustomLayout = ({
                             {/* Photo Field */}
                             {field.type === "photo" && (
                                 <PhotoUploadBox
+                                    name={field.name} // 🔹 Added for Formik binding
                                     placeholderText={field.placeholderText}
                                     onChange={field.onChange}
                                     width={field.width}
                                     height={field.height}
                                     border={field.border}
-
                                 />
                             )}
-
 
                             {(currentType === 'BOTH' || currentType === 'TYPO') && (
                                 <Typography variant='body2' sx={{ fontSize: 14, whiteSpace: 'nowrap', ...field.sx }}>
@@ -68,18 +66,16 @@ const CustomLayout = ({
                                 </Typography>
                             )}
 
-
-
-
                             {(currentType === 'BOTH' || currentType === 'FIELD') && (
-                                <CustomTextField
+                                <CustomInput
                                     type={field.type}
-                                    name={field.name}
+                                    name={field.name} // 🔹 Already there for Formik binding
                                     TextLabel={field.label}
                                     width={field?.width}
                                     options={field.options || []}
                                     fontSize={field.fontSize}
                                     fontWeight={field.fontWeight}
+                                    required={field.required}
                                 />
                             )}
                         </Box>

@@ -1,92 +1,58 @@
+// AdmissionForm.jsx
 import React from "react";
-import { Form, useFormik } from "formik";
+import { Formik, Form } from "formik";
 import * as Yup from "yup";
-import {
-  Box,
-  TextField,
-  Typography,
-  Grid,
-  Button,
-  Paper,
-  MenuItem,
-  InputLabel,
-  Select,
-  FormControl,
-  Link,
-} from "@mui/material";
+import { Box, Paper, Button } from "@mui/material";
 import Header from "./Header";
 import AdmissionHeader from "./AdmissionHeader";
 import InputForm from "./InputForm";
 import ParentDeclaration from "./ParentDeclaration";
 import OfficeWork from "./OfficeWork";
 import Documents from "./Documents";
+import { validationSchema } from "../constant/validation";
+import { initialValues } from "../constant/constant.js";
+
+
+
 
 const AdmissionForm = () => {
-  // const formik = useFormik({
-  //   initialValues: {
-  //     formNo: "",
-  //     penNo: "",
-  //     scholarNo: "",
-  //     admissionDate: "",
-  //     firstName: "",
-  //     middleName: "",
-  //     lastName: "",
-  //     nameHindi: "",
-  //     dob: "",
-  //     dobWords: "",
-  //     gender: "",
-  //     religion: "",
-  //     caste: "",
-  //     subCaste: "",
-  //     address: "",
-  //     aadhaar: "",
-  //     bloodGroup: "",
-  //     bankAccNo: "",
-  //     ifsc: "",
-  //     ssin: "",
-  //     familySsn: "",
-  //     fatherName: "",
-  //     fatherQual: "",
-  //     fatherOcc: "",
-  //     motherName: "",
-  //     motherQual: "",
-  //     motherOcc: "",
-  //     guardianName: "",
-  //     guardianQual: "",
-  //     guardianOcc: "",
-  //     photo: null,
-  //   },
-  //   validationSchema: Yup.object({
-  //     formNo: Yup.string().required("Required"),
-  //     penNo: Yup.string().required("Required"),
-  //     firstName: Yup.string().required("Required"),
-  //     dob: Yup.string().required("Required"),
-  //     gender: Yup.string().required("Required"),
-  //   }),
-  //   onSubmit: (values) => {
-  //     console.log(values);
-  //   },
-  // });
-
-  // const handleFileChange = (e) => {
-  //   formik.setFieldValue("photo", e.currentTarget.files[0]);
-  // };
-
   return (
-    <Paper elevation={3} sx={{ p: 4, maxWidth: 1100, mx: "auto" , border: "2px solid black" }}>
-      <Header />
+    <Paper
+      elevation={3}
+      sx={{ p: 4, maxWidth: 1100, mx: "auto", border: "2px solid black" }}
+    >
+      <Formik
+        initialValues={initialValues}
+        validationSchema={validationSchema}
+        onSubmit={(values, { setSubmitting }) => {
+          console.log("FORM SUBMIT", values);
+          alert("Form submitted — check console.");
+          setSubmitting(false);
+        }}
+      >
+        {/* Yeh Formik context banata hai jise useFormikContext() access karega */}
+        <Form noValidate>
+          <Header />
+          <AdmissionHeader />
+          <InputForm />
+          <ParentDeclaration />
+          <OfficeWork />
+          <Documents />
 
-      <AdmissionHeader />
-
-      <InputForm />
-
-      <ParentDeclaration />
-
-      <OfficeWork/>
-
-      <Documents />
-
-    </Paper>
+          <Box mt={3} display="flex" justifyContent="center" gap={2}>
+            <Button variant="contained" type="submit">
+              Submit
+            </Button>
+            <Button
+              variant="outlined"
+              type="reset"
+            >
+              Reset
+            </Button>
+          </Box>
+        </Form>
+      </Formik>
+    </Paper >
   );
 };
 

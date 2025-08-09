@@ -1,65 +1,77 @@
 import React from "react";
 import DocumentList from "./DocumentList";
 import { Box, Container } from "@mui/material";
-import { documentRequired, stScObcDocs } from "../constant";
+import { documentRequired, stScObcDocs } from "../constant/constant";
 import CustomLayout from "./CustomLayout";
-
 
 export default function Documents() {
     return (
         <Box>
-            <Container sx={{ mt: 2, display: "grid", gap: 2, gridTemplateColumns: { sm: "repeat(1, 1fr)", md: "repeat(2, 1fr)" }, padding: "0 34px" }}>
+            <Container
+                sx={{
+                    mt: 2,
+                    display: "grid",
+                    gap: 2,
+                    gridTemplateColumns: { sm: "repeat(1, 1fr)", md: "repeat(2, 1fr)" },
+                    padding: "0 34px"
+                }}
+            >
                 <DocumentList
                     title="DOCUMENT REQUIRED:"
-                    documents={documentRequired}
+                    documents={documentRequired.map(doc => doc.label)}
+                    nameArray={documentRequired.map(doc => doc.name)}
                     columns={1}
-                />
-                <DocumentList
-                    title="Only for ST, SC & OBC"
-                    documents={stScObcDocs}
-                    columns={1}
+                    name="documentRequired"
                 />
 
+                <DocumentList
+                    title="Only for ST, SC & OBC"
+                    documents={stScObcDocs.map(doc => doc.label)}
+                    nameArray={stScObcDocs.map(doc => doc.name)}
+                    columns={1}
+                    name="stScObcDocs"
+                />
             </Container>
+
             <Box>
                 <CustomLayout
                     itemsPerRow={7}
                     direction="row"
                     fields={[
                         {
-                            name: "firstName",
+                            name: "formIssueDate",
                             label: "FORM ISSUED ON:",
                             type: "text",
-                            wantTypoORCustomField: "TYPO",
+                            WantTypoORCustomField: "TYPO",
                             flex: {
                                 xs: "0 0 100%",
                                 md: "0 0 5%"
                             }
                         },
                         {
-                            name: "firstName",
+                            name: "formIssueDate",
                             type: "date",
-                            wantTypoORCustomField: "FIELD",
+                            WantTypoORCustomField: "FIELD",
                             flex: {
                                 xs: "0 0 100%",
                                 md: "0 0 10%"
                             }
                         },
                         {
-                            name: "firstName",
+                            name: "formNo",
                             label: "FORM No:",
                             type: "text",
-                            wantTypoORCustomField: "TYPO",
+                            WantTypoORCustomField: "TYPO",
                             flex: {
                                 xs: "0 0 100%",
                                 md: "0 0 5%"
                             }
                         },
                         {
-                            name: "firstName",
+                            name: "formNo",
                             label: "FORM No:",
                             type: "text",
-                            wantTypoORCustomField: "FIELD",
+                            WantTypoORCustomField: "FIELD",
                             flex: {
                                 xs: "0 0 100%",
                                 md: "0 0 20%"
@@ -67,30 +79,28 @@ export default function Documents() {
                         },
                         {
                             type: "text",
+                            name: "authorizedSign",
                             label: "AUTHORISED SIGNATURE:",
-                            wantTypoORCustomField: "TYPO",
+                            WantTypoORCustomField: "TYPO",
                             flex: {
                                 xs: "0 0 100%",
                                 md: "0 0 10%"
                             },
                             sx: { marginLeft: { xs: 0, md: 'auto' } }
-
                         },
                         {
-                            laebl: "",
+                            label: "",
+                            name: "authorizedSign",
                             type: "photo",
-                            wantTypoORCustomField: "",
+                            WantTypoORCustomField: "",
                             width: "150px",
                             height: "30px",
                             border: false,
                             flex: {
                                 xs: "0 0 100%",
                                 md: "0 0 5%"
-                            },
-
-                        },
-
-
+                            }
+                        }
                     ]}
                 />
             </Box>
