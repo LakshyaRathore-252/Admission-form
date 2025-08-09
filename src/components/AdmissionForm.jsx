@@ -3,12 +3,12 @@ import React from "react";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import { Box, Paper, Button } from "@mui/material";
-import Header from "./Header";
-import AdmissionHeader from "./AdmissionHeader";
-import InputForm from "./InputForm";
-import ParentDeclaration from "./ParentDeclaration";
-import OfficeWork from "./OfficeWork";
-import Documents from "./Documents";
+import Header from "./Header/Header.jsx";
+import AdmissionHeader from "./Header/AdmissionHeader.jsx";
+import InputForm from "./InputForm.jsx";
+import ParentDeclaration from "./Footer/ParentDeclaration.jsx";
+import OfficeWork from "./Footer/OfficeWork.jsx";
+import Documents from "./Documents/Documents.jsx";
 import { validationSchema } from "../constant/validation";
 import { initialValues } from "../constant/constant.js";
 

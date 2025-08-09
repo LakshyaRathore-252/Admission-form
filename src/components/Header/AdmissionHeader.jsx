@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Box, TextField, Typography } from "@mui/material";
-import CustomInput from './CustomInput'
+import CustomInput from '../ResuableInput/CustomInput'
 import { Photo } from "@mui/icons-material";
-import PhotoUploadBox from "./PhotoUploadBox";
-import CustomLayout from './CustomLayout'
+import PhotoUploadBox from "../ResuablePhotoUploader/PhotoUploadBox";
+import CustomLayout from '../ResuableLayout/CustomLayout'
 
 const AdmissionHeader = () => {
     const [photo, setPhoto] = useState(null);
@@ -61,6 +61,7 @@ const AdmissionHeader = () => {
                                     label: 'Scholar No:',
                                     variant: "body2",
                                     name: 'scholarNo',
+
                                     sx: { fontWeight: "bold" },
                                     flex: { xs: '0 0 20%', md: '0 0 5%' },
 
@@ -71,6 +72,7 @@ const AdmissionHeader = () => {
                                     label: '',
                                     name: 'scholarNo',
                                     TextLabel: "Scholar No.",
+                                    inputMode: "numericOnly",
                                     variant: "outlined",
                                     fullWidth: true,
                                     sx: { flex: 3 }
@@ -115,7 +117,7 @@ const AdmissionHeader = () => {
                 {/* Right - Photo Box */}
                 <Box
                     width={{ xs: '100%', md: '20%' }}
-                    height="130px"
+                    height="190px"
                     display="flex"
                     alignItems="center"
                     justifyContent="center"
@@ -125,7 +127,7 @@ const AdmissionHeader = () => {
                         placeholderText={"AFFIX LATEST PASSPORT SIZE PHOTO OF STUDENT"}
                         onChange={handlePhotoChange}
                         width={200}
-                        height={100}
+                        height={180}
                         name={"studentPhoto"}
                     />
                 </Box>
@@ -153,6 +155,7 @@ const AdmissionHeader = () => {
                             label: '',
                             name: 'penNo',
                             variant: "outlined",
+                            inputMode: "numericOnly",
                             width: '100%',
                             sx: { flex: 1 }
                         }

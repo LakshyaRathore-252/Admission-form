@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
-import PhotoUploadBox from "./PhotoUploadBox";
+import PhotoUploadBox from "../ResuablePhotoUploader/PhotoUploadBox";
 const DocumentList = ({ title, documents, columns = 1, nameArray }) => {
    
     return (

@@ -1,6 +1,6 @@
 import { Box, Link, TextField, Typography } from '@mui/material';
 import React from 'react';
-import CustomInput from './CustomInput';
+import CustomInput from '../ResuableInput/CustomInput';
 
 const Header = () => {
     return (
@@ -145,6 +145,8 @@ const Header = () => {
                         type='text'
                         variant="outlined"
                         name="formNo"
+                        inputMode= "numericOnly"
+
                        
                     />
                 </Box>

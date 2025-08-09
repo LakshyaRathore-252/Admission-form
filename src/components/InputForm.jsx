@@ -1,7 +1,7 @@
 import { Box, Grid } from '@mui/material'
 import React from 'react'
-import CustomInput from './CustomInput'
-import CustomLayout from './CustomLayout'
+import CustomInput from './ResuableInput/CustomInput'
+import CustomLayout from './ResuableLayout/CustomLayout'
 
 const InputForm = () => {
   return (
@@ -91,10 +91,10 @@ const InputForm = () => {
         fields={[
           { name: "dobWords", label: "DATE OF BIRTH IN WORDS", type: "text", WantTypoORCustomField: "TYPO", flex: "0 0 20%" },
           {
-            name: "dobWords", type: "text", WantTypoORCustomField: "FIELD", flex: {
+            name: "dobWords", type: "text", inputMode: "alphaOnly", WantTypoORCustomField: "FIELD", flex: {
               xs: "0 0 95%",
               sm: "0 0 50%",
-              md: "0 0 100%"
+              md: "0 0 75%"
             }
           },
 
@@ -113,7 +113,7 @@ const InputForm = () => {
             }
           },
           {
-            name: 'religion', label: 'RELIGION', type: 'text', WantTypoORCustomField: 'FIELD', TextLabel: 'RELIGION', flex: {
+            name: 'religion', label: 'RELIGION', inputMode: "alphaOnly", type: 'text', WantTypoORCustomField: 'FIELD', TextLabel: 'RELIGION', flex: {
               xs: "0 0 100%",
               sm: "0 0 100%",
               md: "0 0 20%"
@@ -127,10 +127,10 @@ const InputForm = () => {
             }
           },
           {
-            name: "caste", label: "CASTE", type: "text", WantTypoORCustomField: "FIELD", TextLabel: "CASTE", flex: {
+            name: "caste", label: "CASTE", type: "text", inputMode: "alphaOnly", WantTypoORCustomField: "FIELD", TextLabel: "CASTE", flex: {
               xs: "0 0 100%",
               sm: "0 0 100%",
-              md: "0 0 15%"
+              md: "0 0 10%"
             }
           },
           {
@@ -141,7 +141,7 @@ const InputForm = () => {
             }
           },
           {
-            name: "subCaste", label: "SUB CASTE", type: "text", WantTypoORCustomField: "FIELD", TextLabel: "SUB CASTE", flex: {
+            name: "subCaste", label: "SUB CASTE", type: "text", inputMode: "alphaOnly", WantTypoORCustomField: "FIELD", TextLabel: "SUB CASTE", flex: {
               xs: "0 0 100%",
               sm: "0 0 100%",
               md: "0 0 10%"
@@ -211,9 +211,7 @@ const InputForm = () => {
             }
 
           },
-          {
-            name: "CURRENT ADDRESS", label: "CURRENT ADDRESS", type: "text", WantTypoORCustomField: "FIELD", flex: "0 0 100%"
-          }
+
         ]}
       />
 
@@ -230,7 +228,7 @@ const InputForm = () => {
             }
           },
           {
-            name: "aadhaar", label: "AADHAR CARD", type: "text", WantTypoORCustomField: "FIELD", flex: {
+            name: "aadhaar",   inputMode: "numericOnly", label: "AADHAR CARD", type: "text", WantTypoORCustomField: "FIELD", flex: {
               xs: "0 0 100%",
               sm: "0 0 100%",
               md: "0 0 40%"
@@ -245,7 +243,7 @@ const InputForm = () => {
             }
           },
           {
-            name: "bloodGroup", label: "BLOOD GROUP", type: "text", WantTypoORCustomField: "FIELD", flex: {
+            name: "bloodGroup", inputMode: "alphaOnly", label: "BLOOD GROUP", type: "text", WantTypoORCustomField: "FIELD", flex: {
               xs: "0 0 100%",
               sm: "0 0 100%",
               md: "0 0 30%"
@@ -268,10 +266,10 @@ const InputForm = () => {
             }
           },
           {
-            name: "stuBankAccNo", label: "STUDENT'S BANK ACCOUNT NO.", type: "text", WantTypoORCustomField: "FIELD", flex: {
+            name: "stuBankAccNo", inputMode: "numericOnly", label: "STUDENT'S BANK ACCOUNT NO.", type: "text", WantTypoORCustomField: "FIELD", flex: {
               xs: "0 0 100%",
               sm: "0 0 100%",
-              md: "0 0 31%"
+              md: "0 0 30%"
             }
 
           },
@@ -286,7 +284,7 @@ const InputForm = () => {
             name: "ifsc", label: "BANK NAME WITH IFSC CODE", type: "text", WantTypoORCustomField: "FIELD", flex: {
               xs: "0 0 100%",
               sm: "0 0 100%",
-              md: "0 0 25%"
+              md: "0 0 22%"
             }
 
           },
@@ -306,10 +304,10 @@ const InputForm = () => {
             }
           },
           {
-            name: "ssin", label: "SSSM ID NUMBER", type: "text", WantTypoORCustomField: "FIELD", flex: {
+            name: "ssin", label: "SSSM ID NUMBER", inputMode: "numericOnly", type: "text", WantTypoORCustomField: "FIELD", flex: {
               xs: "0 0 100%",
               sm: "0 0 100%",
-              md: "0 0 34%"
+              md: "0 0 30%"
             }
 
           },
@@ -321,7 +319,7 @@ const InputForm = () => {
             }
           },
           {
-            name: "familySsn", label: "FAMILY SSSM ID NUMBER", type: "text", WantTypoORCustomField: "FIELD", flex: {
+            name: "familySsn", label: "FAMILY SSSM ID NUMBER", inputMode: "numericOnly", type: "text", WantTypoORCustomField: "FIELD", flex: {
               xs: "0 0 100%",
               sm: "0 0 100%",
               md: "0 0 34%"
@@ -388,15 +386,15 @@ const InputForm = () => {
             name: "OCCUPATIONTYPO", label: "OCCUPATION", type: "text", WantTypoORCustomField: "TYPO"
           },
           {
-            name: "fatherOcc", label: "FATHER OCCUPATION", type: "text", WantTypoORCustomField: "FIELD"
+            name: "fatherOcc", label: "FATHER OCCUPATION", inputMode: "alphaOnly", type: "text", WantTypoORCustomField: "FIELD"
 
           },
           {
-            name: "motherOcc", label: "MOTHER OCCUPATION", type: "text", WantTypoORCustomField: "FIELD"
+            name: "motherOcc", label: "MOTHER OCCUPATION", inputMode: "alphaOnly", type: "text", WantTypoORCustomField: "FIELD"
 
           },
           {
-            name: "guardianOcc", label: "GUARDIAN OCCUPATION", type: "text", WantTypoORCustomField: "FIELD"
+            name: "guardianOcc", label: "GUARDIAN OCCUPATION", inputMode: "alphaOnly", type: "text", WantTypoORCustomField: "FIELD"
 
           },
         ]}
@@ -408,18 +406,18 @@ const InputForm = () => {
         direction='row'
         fields={[
           {
-            name: "DESIGNATION", label: "DESIGNATION", type: "text", WantTypoORCustomField: "TYPO"
+            name: "DESIGNATION", label: "DESIGNATION", inputMode: "alphaOnly", type: "text", WantTypoORCustomField: "TYPO"
           },
           {
-            name: "fatherDesignation", label: "FATHER DESIGNATION", type: "text", WantTypoORCustomField: "FIELD"
+            name: "fatherDesignation", label: "FATHER DESIGNATION", inputMode: "alphaOnly", type: "text", WantTypoORCustomField: "FIELD"
 
           },
           {
-            name: "motherDesignation", label: "MOTHER DESIGNATION", type: "text", WantTypoORCustomField: "FIELD"
+            name: "motherDesignation", label: "MOTHER DESIGNATION", inputMode: "alphaOnly", type: "text", WantTypoORCustomField: "FIELD"
 
           },
           {
-            name: "guardianDesignation", label: "GUARDIAN DESIGNATION", type: "text", WantTypoORCustomField: "FIELD"
+            name: "guardianDesignation", label: "GUARDIAN DESIGNATION", inputMode: "alphaOnly", type: "text", WantTypoORCustomField: "FIELD"
 
           },
         ]}
@@ -434,14 +432,14 @@ const InputForm = () => {
             name: "DEPARTMENT", label: "DEPARTMENT", type: "text", WantTypoORCustomField: "TYPO"
           },
           {
-            name: "fatherDepartment", label: "FATHER DEPARTMENT", type: "text", WantTypoORCustomField: "FIELD"
+            name: "fatherDepartment", label: "FATHER DEPARTMENT", inputMode: "alphaOnly", type: "text", WantTypoORCustomField: "FIELD"
 
           },
           {
-            name: "motherDepartment", label: "MOTHER DEPARTMENT", type: "text", WantTypoORCustomField: "FIELD"
+            name: "motherDepartment", label: "MOTHER DEPARTMENT", inputMode: "alphaOnly", type: "text", WantTypoORCustomField: "FIELD"
           },
           {
-            name: "guardianDepartment", label: "GUARDIAN DEPARTMENT", type: "text", WantTypoORCustomField: "FIELD"
+            name: "guardianDepartment", label: "GUARDIAN DEPARTMENT", inputMode: "alphaOnly", type: "text", WantTypoORCustomField: "FIELD"
           },
         ]}
       />
@@ -455,14 +453,14 @@ const InputForm = () => {
             name: "ANNUAL INCOME", label: "ANNUAL INCOME", type: "text", WantTypoORCustomField: "TYPO"
           },
           {
-            name: "fatherAnnualIncome", label: "FATHER ANNUAL INCOME", type: "text", WantTypoORCustomField: "FIELD"
+            name: "fatherAnnualIncome", label: "FATHER ANNUAL INCOME", inputMode: "numericOnly", type: "text", WantTypoORCustomField: "FIELD"
 
           },
           {
-            name: "motherAnnualIncome", label: "MOTHER ANNUAL INCOME", type: "text", WantTypoORCustomField: "FIELD"
+            name: "motherAnnualIncome", label: "MOTHER ANNUAL INCOME", inputMode: "numericOnly", type: "text", WantTypoORCustomField: "FIELD"
           },
           {
-            name: "guardianAnnualIncome", label: "GUARDIAN ANNUAL INCOME", type: "text", WantTypoORCustomField: "FIELD"
+            name: "guardianAnnualIncome", label: "GUARDIAN ANNUAL INCOME", inputMode: "numericOnly", type: "text", WantTypoORCustomField: "FIELD"
           },
 
         ]}
@@ -477,14 +475,14 @@ const InputForm = () => {
             name: "CONTACT NUMBER", label: "CONTACT NUMBER", type: "text", WantTypoORCustomField: "TYPO"
           },
           {
-            name: "fatherMobile", label: "FATHER CONTACT NUMBER", type: "text", WantTypoORCustomField: "FIELD"
+            name: "fatherMobile", label: "FATHER CONTACT NUMBER", inputMode: "numericOnly", type: "text", WantTypoORCustomField: "FIELD"
 
           },
           {
-            name: "motherMobile", label: "MOTHER CONTACT NUMBER", type: "text", WantTypoORCustomField: "FIELD"
+            name: "motherMobile", label: "MOTHER CONTACT NUMBER", inputMode: "numericOnly", type: "text", WantTypoORCustomField: "FIELD"
           },
           {
-            name: "guardianMobile", label: "GUARDIAN CONTACT NUMBER", type: "text", WantTypoORCustomField: "FIELD"
+            name: "guardianMobile", label: "GUARDIAN CONTACT NUMBER", inputMode: "numericOnly", type: "text", WantTypoORCustomField: "FIELD"
           },
         ]}
       />
@@ -545,6 +543,7 @@ const InputForm = () => {
           {
             name: "prevSchoolName",
             label: "NAME OF PREVIOUS SCHOOL",
+            inputMode: "alphaOnly",
             type: "text",
             WantTypoORCustomField: "FIELD",
             flex: {
@@ -569,7 +568,7 @@ const InputForm = () => {
             }
           },
           {
-            name: 'palce', label: 'PLACE', type: 'text', WantTypoORCustomField: 'FIELD', TextLabel: 'PLACE', flex: {
+            name: 'palce', label: 'PLACE', type: 'text', inputMode: "alphaOnly", WantTypoORCustomField: 'FIELD', TextLabel: 'PLACE', flex: {
               xs: "0 0 100%",
               sm: "0 0 100%",
               md: "0 0 20%"
@@ -583,7 +582,7 @@ const InputForm = () => {
             }
           },
           {
-            name: "lastClass", label: "LAST CLASS", type: "text", WantTypoORCustomField: "FIELD", TextLabel: "CASTE", flex: {
+            name: "lastClass", label: "LAST CLASS", inputMode: "alphaOnly", type: "text", WantTypoORCustomField: "FIELD", TextLabel: "CASTE", flex: {
               xs: "0 0 100%",
               sm: "0 0 100%",
               md: "0 0 15%"
@@ -597,14 +596,14 @@ const InputForm = () => {
             }
           },
           {
-            name: "result", label: "RESULT", type: "text", WantTypoORCustomField: "FIELD", TextLabel: "RESULT", flex: {
+            name: "result", label: "RESULT", inputMode: "alphaOnly", type: "text", WantTypoORCustomField: "FIELD", TextLabel: "RESULT", flex: {
               xs: "0 0 100%",
               sm: "0 0 100%",
               md: "0 0 10%"
             }
           },
           {
-            name: "session", label: "SESSION", type: "email", WantTypoORCustomField: "TYPO", flex: {
+            name: "session", label: "SESSION", inputMode: "alphaOnly", type: "email", WantTypoORCustomField: "TYPO", flex: {
               xs: "0 0 100%",
               sm: "0 0 100%",
               md: "0 0 5%"
@@ -614,7 +613,7 @@ const InputForm = () => {
             name: "session", label: "SESSION", type: "email", WantTypoORCustomField: "FIELD", TextLabel: "EMAIL", flex: {
               xs: "0 0 100%",
               sm: "0 0 100%",
-              md: "0 0 20%"
+              md: "0 0 17%"
             }
           },
 
@@ -658,7 +657,7 @@ const InputForm = () => {
           }
           ,
           {
-            name: "hostelName", label: "HOSTEL NAME", type: "text", WantTypoORCustomField: "FIELD", TextLabel: "HOSTEL NAME", flex: {
+            name: "hostelName", inputMode: "alphaOnly", label: "HOSTEL NAME", type: "text", WantTypoORCustomField: "FIELD", TextLabel: "HOSTEL NAME", flex: {
               xs: "0 0 100%",
               sm: "0 0 100%",
               md: "0 0 30%"
@@ -672,7 +671,7 @@ const InputForm = () => {
             }
           },
           {
-            name: "contactNumber", label: "CONTACT NO. (If student living in Hostel)", type: "text", WantTypoORCustomField: "FIELD", TextLabel: "CONTACT NO", flex: {
+            name: "contactNumber", inputMode: "numericOnly", label: "CONTACT NO. (If student living in Hostel)", type: "text", WantTypoORCustomField: "FIELD", TextLabel: "CONTACT NO", flex: {
               xs: "0 0 100%",
               sm: "0 0 100%",
               md: "0 0 30%"

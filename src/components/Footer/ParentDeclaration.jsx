@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Divider, Typography } from "@mui/material";
-import CustomLayout from "./CustomLayout";
+import CustomLayout from "../ResuableLayout/CustomLayout";
 
 const DeclarationParagraph = ({ text, bold = false, highlight = false }) => {
     return (
@@ -105,7 +105,7 @@ const ParentDeclaration = () => {
                             WantTypoORCustomField: "TYPO",
                             border: false,
                             width: 150,
-                            height: 30,
+                            height: 50,
                             onchange: {},
                             flex: {
                                 xs: "0 0 100%",

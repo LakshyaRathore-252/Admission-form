@@ -1,8 +1,8 @@
 import React from "react";
 import DocumentList from "./DocumentList";
 import { Box, Container } from "@mui/material";
-import { documentRequired, stScObcDocs } from "../constant/constant";
-import CustomLayout from "./CustomLayout";
+import { documentRequired, stScObcDocs } from "../../constant/constant";
+import CustomLayout from "../ResuableLayout/CustomLayout";
 
 export default function Documents() {
     return (
@@ -71,6 +71,7 @@ export default function Documents() {
                             name: "formNo",
                             label: "FORM No:",
                             type: "text",
+                              inputMode: "numericOnly",
                             WantTypoORCustomField: "FIELD",
                             flex: {
                                 xs: "0 0 100%",

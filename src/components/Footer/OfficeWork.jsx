@@ -1,7 +1,7 @@
 import { Box, Divider, Typography } from '@mui/material'
 import React from 'react'
-import CustomInput from './CustomInput'
-import CustomLayout from './CustomLayout'
+import CustomInput from '../ResuableInput/CustomInput'
+import CustomLayout from '../ResuableLayout/CustomLayout'
 
 const OfficeWork = () => {
     return (
@@ -28,10 +28,10 @@ const OfficeWork = () => {
                 <CustomInput name="stuName" type="text" WantTypoORCustomField="FIELD" width="150px" />
 
                 <Typography variant="body1" component="span">
-                    is admitted in
+                    is admitted in 
                 </Typography>
 
-                <CustomInput name="class" TextLabel='Class' label={"Class"} type="text" WantTypoORCustomField="FIELD" width="150px" />
+                <CustomInput name="class" type="text" WantTypoORCustomField="FIELD" width="150px" />
 
                 <Typography variant="body1" component="span">
                     class on
@@ -75,7 +75,7 @@ const OfficeWork = () => {
                             type: "photo",
                             WantTypoORCustomField: "TYPO",
                             width: 150,
-                            height: 30,
+                            height: 50,
                             border: false,
                             onchange: {},
                             flex: {
@@ -100,13 +100,13 @@ const OfficeWork = () => {
                             type: "photo",
                             WantTypoORCustomField: "TYPO",
                             width: 150,
-                            height: 30,
+                            height: 50,
                             border: false,
                             onchange: {},
                             flex: {
                                 xs: "0 0 100%",
                                 sm: "0 0 100%",
-                                md: "0 0 20%"
+                                md: "0 0 15%"
                             }
                         },
                     ]}

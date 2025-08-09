@@ -13,7 +13,7 @@ import {
 import { FastField } from "formik";
 
 const CustomInput = ({
-  label ="",
+  label = "",
   labelSx = {},
   labelVariant = "body2",
   labelWeight = "bold",
@@ -30,6 +30,7 @@ const CustomInput = ({
   TextLabel = "",
   options = [],
   name,
+  inputMode,
   ...rest
 }) => {
   if (!name) {
@@ -110,9 +111,19 @@ const CustomInput = ({
                   },
                   ...inputSx,
                 }}
+                onChange={(e) => {
+                  let val = e.target.value;
+                  if (inputMode === "numericOnly") {
+                    val = val.replace(/[^0-9]/g, "");
+                  } else if (inputMode === "alphaOnly") {
+                    val = val.replace(/[^a-zA-Z\s]/g, "");
+                  }
+                  form.setFieldValue(name, val);
+                }}
                 {...rest}
               />
             )}
+
           </Box>
         );
       }}
