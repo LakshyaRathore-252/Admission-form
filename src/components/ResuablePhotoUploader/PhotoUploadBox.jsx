@@ -1,4 +1,4 @@
-import React, { useRef, useState, useCallback, useMemo } from "react";
+import React, { useRef, useState, useCallback, useMemo, useEffect } from "react";
 import { Box, Typography, IconButton, Button } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { useFormikContext } from "formik";
@@ -14,6 +14,12 @@ const PhotoUpload = ({
     const { setFieldValue, values, errors, touched } = useFormikContext();
     const [preview, setPreview] = useState(values[name] || null);
     const fileInputRef = useRef(null);
+
+    useEffect(() => {
+        if (!values[name]) {
+            setPreview(null);
+        }
+    }, [values[name]]);
 
     // Memoize error check
     const hasError = useMemo(
@@ -32,9 +38,13 @@ const PhotoUpload = ({
 
             setFieldValue(name, file);
             if (onChange) onChange(file);
+
+            // IMPORTANT: same file dobara select karne ke liye input reset karo
+            event.target.value = "";
         },
         [setFieldValue, name, onChange]
     );
+
 
     // Remove file
     const handleRemove = useCallback(() => {

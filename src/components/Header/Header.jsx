@@ -67,7 +67,7 @@ const Header = () => {
                             flexDirection: { xs: "column", sm: "row" },
                             justifyContent: "space-between",
                             alignItems: { xs: "center", sm: "center" },
-                            fontSize: { xs: "0.5em", sm: "0.5em", md: "0.9em", lg: "0.9em" },
+                            fontSize: { xs: "0.9em", sm: "0.7em", md: "0.9em", lg: "0.9em" },
                             mt: { md: 2, sm: 3, xs: 3 },
                             width: "100%",
                             px: { xs: 1, md: 3 },
@@ -75,18 +75,20 @@ const Header = () => {
 
                         }}
                     >
-                        <Typography variant="body2" fontWeight="bold" sx={{ textTransform: "uppercase", }}>
+                        <Typography variant="body2" fontWeight="bold" sx={{
+                            textTransform: "uppercase", fontSize: { xs: "0.9em", sm: "0.9em", md: "0.8em", lg: "0.9em" },
+                        }}>
                             Mob:
                             <Link href="tel:9691270729" sx={{ textDecoration: "none", color: "black" }}> 9691270729</Link>,
                             <Link href="tel:9425103500" sx={{ textDecoration: "none", color: "black" }}> 9425103500</Link>
                         </Typography>
 
-                        <Typography variant="body2" fontWeight="bold" sx={{ color: "black", }}>
+                        <Typography variant="body2" fontWeight="bold" sx={{ color: "black", fontSize: { xs: "0.9em", sm: "0.9em", md: "0.8em", lg: "0.9em" }, }}>
                             Website:
                             <Link href="https://www.saishreeinternational.in/" sx={{ textDecoration: "none", color: "black" }}> www.Saishreeinternational.in</Link>
                         </Typography>
 
-                        <Typography variant="body2" fontWeight="bold" sx={{ color: "black" }} >
+                        <Typography variant="body2" fontWeight="bold" sx={{ color: "black", fontSize: { xs: "0.9em", sm: "0.9em", md: "0.8em", lg: "0.9em" }, }} >
                             Email:
                             <Link
                                 href="mailto:admin@saishreeinternational.in"
@@ -145,9 +147,9 @@ const Header = () => {
                         type='text'
                         variant="outlined"
                         name="formNo"
-                        inputMode= "numericOnly"
+                        inputMode="numericOnly"
 
-                       
+
                     />
                 </Box>
             </Box>

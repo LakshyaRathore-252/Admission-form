@@ -181,13 +181,11 @@ const InputForm = () => {
             name: "perAddress", label: "PER. COMPLETE ADDRESS", type: "text", WantTypoORCustomField: "FIELD", flex: {
               xs: "0 0 100%",
               sm: "0 0 100%",
-              md: "0 0 50%"
+              md: "0 0 78%"
             }
 
           },
-          // {
-          //   name: "PER. COMPLETE ADDRESS", label: "PER. COMPLETE ADDRESS", type: "text", WantTypoORCustomField: "FIELD", flex: "0 0 100%"
-          // }
+       
         ]}
       />
 
