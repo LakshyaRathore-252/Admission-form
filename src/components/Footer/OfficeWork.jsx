@@ -49,7 +49,7 @@ const OfficeWork = () => {
                     ADMISSION FEE / FIRST INSTALLMENT / PAID ON:
                 </Typography>
 
-                <CustomInput name={"admissionDate"} type="date" WantTypoORCustomField="FIELD" width="150px" />
+                <CustomInput name="admissionDate" type="date" WantTypoORCustomField="FIELD" width="150px" />
             </Box>
 
             <Box>

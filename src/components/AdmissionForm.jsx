@@ -1,16 +1,14 @@
 // AdmissionForm.jsx
-import React from "react";
-import { Formik, Form } from "formik";
-import * as Yup from "yup";
-import { Box, Paper, Button } from "@mui/material";
-import Header from "./Header/Header.jsx";
-import AdmissionHeader from "./Header/AdmissionHeader.jsx";
-import InputForm from "./InputForm.jsx";
-import ParentDeclaration from "./Footer/ParentDeclaration.jsx";
-import OfficeWork from "./Footer/OfficeWork.jsx";
-import Documents from "./Documents/Documents.jsx";
-import { validationSchema } from "../constant/validation";
+import { Box, Button, Paper } from "@mui/material";
+import { Form, Formik } from "formik";
 import { initialValues } from "../constant/constant.js";
+import { validationSchema } from "../constant/validation";
+import Documents from "./Documents/Documents.jsx";
+import OfficeWork from "./Footer/OfficeWork.jsx";
+import ParentDeclaration from "./Footer/ParentDeclaration.jsx";
+import AdmissionHeader from "./Header/AdmissionHeader.jsx";
+import Header from "./Header/Header.jsx";
+import InputForm from "./InputForm.jsx";
 
 
 

@@ -184,6 +184,7 @@ const AdmissionHeader = () => {
                             label=""
                             height={30}
                             size="small"
+                            name=""
                             width="150px"
                         />
 
@@ -192,6 +193,7 @@ const AdmissionHeader = () => {
                         </Typography>
 
                         <CustomInput
+                            name=""
                             label=""
                             height={30}
                             size="small"

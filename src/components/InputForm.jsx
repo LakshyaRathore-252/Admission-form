@@ -1,6 +1,4 @@
-import { Box, Grid } from '@mui/material'
-import React from 'react'
-import CustomInput from './ResuableInput/CustomInput'
+import { Box } from '@mui/material'
 import CustomLayout from './ResuableLayout/CustomLayout'
 
 const InputForm = () => {
